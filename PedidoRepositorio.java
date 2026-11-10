@@ -6,6 +6,6 @@ public class PedidoRepositorio {
 
     public void salvarPedido(Pedido pedido) {
         pedidos.add(pedido);
-        System.out.println("Pedido salvo com sucesso!");
+        System.out.println("Pedido salvo com sucesso!\n");
     }
 }
