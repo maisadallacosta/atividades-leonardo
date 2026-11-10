@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-public class PedidoRepositorio {
+public class PedidoRepositorio implements GerenciarPedidos {
 
     ArrayList<Pedido> pedidos = new ArrayList<>();
 
     public void salvarPedido(Pedido pedido) {
         pedidos.add(pedido);
-        System.out.println("Pedido salvo com sucesso!\n");
+        System.out.println("Pedido salvo com sucesso!");
     }
 }

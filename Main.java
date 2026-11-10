@@ -1,23 +1,19 @@
 public class Main {
     public static void main(String[] args) {
 
-        Produto produto1 = new Pizza("Pizza", 45.00);
-        Produto produto2 = new Hamburguer("Hambúrguer", 30.00);
-        Produto produto3 = new Bebida("Refrigerante", 8.00);
+        Produto produto = new Pizza("Pizza", 45.00);
+        Pedido pedido = new Pedido(produto, 1);
 
         PedidoRepositorio repositorio = new PedidoRepositorio();
-        PedidoExibicao exibicao = new PedidoExibicao();
+        repositorio.salvarPedido(pedido);
 
-        Pedido pedido1 = new Pedido(produto1, 1);
-        Pedido pedido2 = new Pedido(produto2, 2);
-        Pedido pedido3 = new Pedido(produto3, 3);
+        EnvioNotificacao notificacao = new EnvioNotificacao();
+        notificacao.enviarNotificacao("Seu pedido foi recebido!");
 
-        repositorio.salvarPedido(pedido1);
-        repositorio.salvarPedido(pedido2);
-        repositorio.salvarPedido(pedido3);
+        RelatorioPedidos relatorio = new RelatorioPedidos();
+        relatorio.gerarRelatorio();
 
-        exibicao.exibirPedido(pedido1);
-        exibicao.exibirPedido(pedido2);
-        exibicao.exibirPedido(pedido3);
+        Entrega entrega = new Entrega();
+        entrega.atualizarEntrega("Saiu para entrega!");
     }
 }
